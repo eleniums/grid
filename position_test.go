@@ -3,7 +3,7 @@ package grid
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	assert "github.com/stretchr/testify/require"
 )
 
 func Test_Position_NewPos_Successful(t *testing.T) {

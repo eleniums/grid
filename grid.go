@@ -8,7 +8,18 @@ func NewGrid() Grid {
 	return Grid{}
 }
 
-// Add a value at position (x, y).
+// Add value at position (x, y).
 func (g Grid) Add(x, y float64, value interface{}) {
 	g[NewPosition(x, y)] = value
+}
+
+// Retrieve value at position (x, y).
+func (g Grid) Retrieve(x, y float64) (interface{}, bool) {
+	value, ok := g[NewPosition(x, y)]
+	return value, ok
+}
+
+// Delete value at position (x, y).
+func (g Grid) Delete(x, y float64) {
+	delete(g, NewPosition(x, y))
 }
