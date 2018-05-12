@@ -6,14 +6,14 @@ import (
 	assert "github.com/stretchr/testify/require"
 )
 
-func Test_Grid_NewGrid_Successful(t *testing.T) {
+func Test_Grid_NewGrid_Success(t *testing.T) {
 	grid := NewGrid()
 
 	assert.NotNil(t, grid)
 	assert.Empty(t, grid)
 }
 
-func Test_Grid_Add_Successful(t *testing.T) {
+func Test_Grid_Add_Success(t *testing.T) {
 	grid := NewGrid()
 
 	x := 1.0
@@ -38,7 +38,7 @@ func Test_Grid_Add_Overwrite(t *testing.T) {
 	assert.Equal(t, expected, grid[NewPosition(x, y)])
 }
 
-func Test_Grid_Retrieve_Successful(t *testing.T) {
+func Test_Grid_Retrieve_Success(t *testing.T) {
 	grid := NewGrid()
 
 	x := 1.0
@@ -65,7 +65,7 @@ func Test_Grid_Retrieve_NoValue(t *testing.T) {
 	assert.Nil(t, value)
 }
 
-func Test_Grid_Delete_Successful(t *testing.T) {
+func Test_Grid_Delete_Success(t *testing.T) {
 	grid := NewGrid()
 
 	x := 1.0
@@ -87,6 +87,21 @@ func Test_Grid_Delete_NoValue(t *testing.T) {
 	y := 2.0
 
 	grid.Delete(x, y)
+
+	value, ok := grid[NewPosition(x, y)]
+	assert.False(t, ok)
+	assert.Nil(t, value)
+}
+
+func Test_Grid_Clear_Success(t *testing.T) {
+	grid := NewGrid()
+
+	x := 1.0
+	y := 2.0
+
+	grid.Add(x, y, "test")
+
+	grid.Clear()
 
 	value, ok := grid[NewPosition(x, y)]
 	assert.False(t, ok)

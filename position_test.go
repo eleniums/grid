@@ -6,7 +6,7 @@ import (
 	assert "github.com/stretchr/testify/require"
 )
 
-func Test_Position_NewPos_Successful(t *testing.T) {
+func Test_Position_NewPos_Success(t *testing.T) {
 	x := 1.0
 	y := 2.0
 

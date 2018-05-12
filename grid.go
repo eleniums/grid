@@ -23,3 +23,10 @@ func (g Grid) Retrieve(x, y float64) (interface{}, bool) {
 func (g Grid) Delete(x, y float64) {
 	delete(g, NewPosition(x, y))
 }
+
+// Clear the entire grid.
+func (g Grid) Clear() {
+	for k := range g {
+		delete(g, k)
+	}
+}
