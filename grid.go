@@ -30,3 +30,14 @@ func (g Grid) Clear() {
 		delete(g, k)
 	}
 }
+
+// Copy the grid structure using a shallow copy.
+func (g Grid) Copy() Grid {
+	copy := NewGrid()
+
+	for k, v := range g {
+		copy[k] = v
+	}
+
+	return copy
+}

@@ -107,3 +107,24 @@ func Test_Grid_Clear_Success(t *testing.T) {
 	assert.False(t, ok)
 	assert.Nil(t, value)
 }
+
+func Test_Grid_Copy_Success(t *testing.T) {
+	grid := NewGrid()
+
+	x := 1.0
+	y := 2.0
+	expected := "test"
+
+	grid.Add(x, y, expected)
+
+	copy := grid.Copy()
+
+	// make sure copy contains same value
+	value, ok := copy[NewPosition(x, y)]
+	assert.True(t, ok)
+	assert.Equal(t, expected, value)
+
+	// make sure copy can be modified without affecting the original
+	copy.Add(1, 1, "test2")
+	assert.NotEqual(t, grid, copy)
+}
