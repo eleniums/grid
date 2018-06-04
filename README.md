@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/eleniums/grid.svg?branch=master)](https://travis-ci.org/eleniums/grid) [![Go Report Card](https://goreportcard.com/badge/github.com/eleniums/grid)](https://goreportcard.com/report/github.com/eleniums/grid) [![GoDoc](https://godoc.org/github.com/eleniums/grid?status.svg)](https://godoc.org/github.com/eleniums/grid) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/eleniums/grid/blob/master/LICENSE)
 
-Memory efficient grid of near infinite size containing values of any type.
+2D grid of near infinite size containing values of any type.
 
 ## Installation
 
